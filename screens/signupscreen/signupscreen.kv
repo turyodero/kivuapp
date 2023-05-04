@@ -1,0 +1,111 @@
+<SignupScreen>:
+    name:"signup"
+    MDFloatLayout:
+        md_bg_color: 1,1,1,1
+        MDIconButton:
+            icon:"arrow-left"
+            pos_hint: {"centet_y":.95}
+            user_font_size:"30sp"
+            theme_text_color:"Custom"
+            text_color: rgba(26, 24, 58, 255)
+            on_release: 
+                root.manager.transition.direction = 'right'
+                root.manager.current = 'slider'
+    MDLabel:
+        text: "W e l c o m e"
+        color: "#000000"  
+        font_size: "26sp"   
+        pos_hint:{"center_x": .6,"center_y": .85} 
+    MDLabel:
+        text: "Loin  to access your account"
+        color: "#000000"  
+        font_size: "15sp"   
+        pos_hint:{"center_x": .6,"center_y": .79} 
+    MDFloatLayout:
+        size_hint: .7, .07
+        pos_hint:{"center_x": .5,"center_y": .65} 
+        TextInput:
+            hint_text:"email"
+            size_hint_y: .75
+            pos_hint: {'center_x': 0.43,'center_y': 0.5}
+            background_color:1,1,1,0
+            foregroung_color: rgba(0,0,59,255)
+            multiline:False
+        MDFloatLayout:
+            pos_hint: {'center_x': 0.45,'center_y': 0.0}
+            size_hint_y:.03
+            md_bg_color: rgba(178,178,178,255)
+    MDFloatLayout:
+        size_hint: .7, .07
+        pos_hint:{"center_x": .5,"center_y": .5} 
+        TextInput:
+            hint_text:"password"
+            password:True
+            size_hint_y: .75
+            pos_hint: {'center_x': 0.43,'center_y': 0.5}
+            background_color:1,1,1,0
+            foregroung_color: rgba(0,0,59,255)
+            multiline:False
+        MDFloatLayout:
+            pos_hint: {'center_x': 0.45,'center_y': 0}
+            size_hint_y:.03
+            md_bg_color: rgba(178 , 178, 178, 255)
+    Button:
+        text: "Signup"
+        size_hint: .66, .065
+        pos_hint: {'center_x': 0.5,'center_y': 0.34}
+        background_color: "#E87040"
+        canvas.before:
+            Color:
+                rgb: rgba(52, 0, 231, 255)
+            RoundedRectangle:
+                size:self.size
+                pos:self.pos
+                radius:[5]
+    MDTextButton:
+        text:"Forgot Password"
+        pos_hint: {'center_x': 0.5,'center_y': 0.28}
+        color:"#E87040"
+        font_size:"12sp"
+    MDLabel:
+        text:"Or"
+        font_size:"13sp"
+        pos_hint: {'center_y': 0.22}
+        halign:"center"
+    MDFloatLayout:
+        md_bg_color: rgba(178, 178, 178, 255)
+        size_hint: .3, .002
+        pos_hint: {'center_x': 0.3,'center_y': 0.218}
+    MDFloatLayout:
+        md_bg_color: rgba(178, 178, 178, 255)
+        size_hint: .3, .002
+        pos_hint: {'center_x': 0.7,'center_y': 0.218}
+    MDLabel:
+        text:"Social Media Login"
+        font_size: "13sp"
+        halign:"center"
+        pos_hint: {'center_y': 0.16}
+    MDGridLayout:
+        cols:3
+        size_hint: .48, .07
+        pos_hint: {'center_x': 0.5,'center_y': 0.1}
+        Image:
+            source: "images/google.png"
+        Image:
+            source: "images/facebook.png"
+        Image:
+            source: "images/apple.png"
+    MDLabel:
+        text:"Already have an account"  
+        font_size: '10sp'
+        color:"#E87040"
+        pos_hint: {'center_x': 0.68,'center_y': 0.04} 
+        color: rgba(135, 133, 193, 255)     
+    MDTextButton:
+        text:"login"  
+        font_size: '10sp'
+        pos_hint: {'center_x': 0.75,'center_y': 0.04} 
+        color: rgba(135, 133, 193, 255) 
+        on_release: 
+            root.manager.transition.direction = "right" 
+            root.manager.current='login'

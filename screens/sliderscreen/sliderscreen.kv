@@ -1,0 +1,94 @@
+<SliderScreen>:
+    name:'slider'
+    MDFloatLayout:
+        md_bg_color: 1,1,1,1
+        Carousel:
+            id:carousel
+            
+            
+            on_current_slide: root.current_slide(self.index)
+            MDFloatLayout:
+                Image:
+                    source:"images/pngegg.png"
+                    pos_hint:{"center_x": .5,"center_y": .7}
+                    size_hint:0.8, 0.8
+                MDLabel:
+                    text: "Fast  Delivery"
+                    pos_hint:{"center_y": 0.47}
+                    halign:'center'
+                    color: "#E87040"
+                    font_size: '30sp'
+                MDLabel:
+                    text:'Receive your orders faster than you least expected'
+                    pos_hint:{"center_x": .5,"center_y": .35}
+                    font_size: '15sp'
+                    halign:'center'
+                MDTextButton:
+                    text:'Skip'
+                    pos_hint:{"center_x": .88,"center_y": .95}
+                    font_size:'13sp'
+                    color:"#E87040" 
+                    on_release: 
+                        app.next()
+
+                    
+            MDFloatLayout:
+                Image:
+                    source:"images/fresh.png"
+                    pos_hint:{"center_x": .5,"center_y": .7}
+                    size_hint:0.8, 0.8
+                MDLabel:
+                    text: "Fresh Food"
+                    pos_hint:{"center_y": 0.47}
+                    halign:'center'
+                    color: "#E87040"
+
+                MDTextButton:
+                    text:'Skip'
+                    pos_hint:{"center_x": .88,"center_y": .95}
+                    font_size:'13sp'
+                    color:"#E87040" 
+                    on_release: 
+                        app.next()
+            MDFloatLayout:
+                Image:
+                    source:"images/pay.png"
+                    pos_hint:{"center_x": .5,"center_y": .7}
+                    size_hint:0.8, 0.8
+                MDLabel:
+                    text: "Fast  Payment"
+                    pos_hint:{"center_y": 0.47}
+                    halign:'center'
+                    color: "#E87040"
+                Button:
+                    text: "Get Started"
+                    background_color:"#E87040"
+                    font_size:"13sp"
+                    size_hint: .9, .075
+                    pos_hint:{"center_x": .5,"center_y": .06}
+                    on_release:
+                        root.manager.transition.direction = "left"
+                        root.manager.current = 'login'
+    MDLabel:
+        id:"slide0"
+        text: "."
+        color: "#E87040"
+        pos_hint:{"center_x": .9,"center_y": .22}  
+        font_size:"80sp" 
+        
+
+    MDLabel:
+        id:"slide2"
+        text: "."
+        color: "#EEEFEF"
+        pos_hint:{"center_x": .5,"center_y": .22}  
+        font_size:"80sp" 
+        halign:"center"  
+
+    MDLabel:
+        id:"slide3"
+        text: "."
+        color: "#EEEFEF"
+        pos_hint:{"center_x": 1.03,"center_y": .22}  
+        font_size:"80sp" 
+                     
